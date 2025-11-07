@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>نظام تنبيهات ذكي - معاينة</title>
-  <link rel="stylesheet" href=".styles.css">
+
+  <!-- ✅ تصحيح مسار ملف الستايل -->
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
   <!-- الهيدر -->
@@ -24,6 +27,7 @@
       </div>
     </div>
   </header>
+
   <!-- المحتوى -->
   <main class="container">
     <!-- قائمة المقررات -->
@@ -35,6 +39,7 @@
         <li data-course="eng301">مقرر: اللغة الإنجليزية</li>
       </ul>
     </aside>
+
     <!-- التنبيهات -->
     <section class="alerts">
       <div class="alerts-header">
@@ -43,6 +48,7 @@
       </div>
       <ul id="alertsList" class="alerts-list"></ul>
       <div class="empty" id="emptyState">لا توجد تنبيهات — أنشئ تنبيهًا جديدًا</div>
+
       <!-- لوحة الإحصائيات -->
       <div id="statsPanel" class="stats hidden">
         <h3>إحصائيات الطلاب</h3>
@@ -59,10 +65,12 @@
       </div>
     </section>
   </main>
+
   <!-- الفوتر -->
   <footer class="site-footer">
     <p>© 2025 نظام التنبيهات الذكي — جميع الحقوق محفوظة</p>
   </footer>
+
   <!-- مودال -->
   <div id="modal" class="modal hidden">
     <div class="modal-content">
@@ -95,9 +103,9 @@
       </form>
     </div>
   </div>
-  <script src=".script.js"></script>
+
+  <!-- ✅ تصحيح مسار ملف الجافاسكربت -->
+  <script src="script.js"></script>
+
 </body>
 </html>
-
-
-
