@@ -1,0 +1,280 @@
+/* ألوان أساسية */
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #000000;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", Tahoma, "Noto Kufi Arabic", sans-serif;
+  background: var(--bg);
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* هيدر */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg,#c4aed5,#c4aed5);
+  color: #ffffff;
+  padding: 16px 24px;
+  box-shadow: var(--shadow);
+}
+.site-header .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+.site-header .nav a {
+  margin: 0 8px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+.site-header .controls button {
+  background: #fff;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* الفوتر */
+.site-footer {
+  background: #f7ecff;
+  color: #000000;
+  text-align: center;
+  padding: 14px;
+  margin-top: auto;
+}
+
+/* الحاوية */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  flex: 1;
+}
+.courses {
+  width: 220px;
+  background: var(--card);
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.courses h2 {
+  margin-bottom: 12px;
+}
+.courses ul { list-style: none; }
+.courses li {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+}
+.courses li.active {
+  background: #eef2f7;
+  color: #0b2545;
+  font-weight: 600;
+}
+
+/* التنبيهات */
+.alerts { flex: 1; }
+.alerts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.alerts-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.alert-card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.alert-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+.alert-title { font-weight: 700; }
+.alert-desc { font-size: 13px; color: var(--muted); }
+
+/* حالة التنبيه */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.badge.yellow { background: #fff7e6; color: #b45309; }
+.badge.red { background: #fff1f2; color: #be123c; }
+.badge.green { background: #ecfdf5; color: #166534; }
+
+/* أزرار */
+.alert-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.btn.ghost { background: transparent; border: 1px solid #e6e8eb; }
+.btn.danger { background: #ef4444; color: white; }
+
+/* حالة فارغة */
+.empty {
+  display: none;
+  text-align: center;
+  padding: 36px;
+  color: var(--muted);
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* المودال */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2,6,23,0.35);
+  z-index: 50;
+}
+.modal.hidden { display: none; }
+.modal-content {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 14px;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: var(--shadow);
+}
+.modal-content form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e6eef5;
+  margin-top: 6px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+/* إحصائيات الطلاب */
+.stats {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: var(--shadow);
+}
+.stats h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.stat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.progress-bar {
+  flex: 1;
+  height: 12px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progress-bar div {
+  height: 100%;
+  width: 0%;
+  transition: width 0.6s ease;
+}
+#openedBar { background: #f39c12; }
+#submittedBar { background: #27ae60; }
+.hidden { display: none; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#newAlertBtn {
+  background: #7d5ab5;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#newAlertBtn:hover {
+  background: #6847a5;
+}
+
+.role-box select {
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  cursor: pointer;
+  background: #fff;
+  transition: 0.3s;
+}
+.role-box select:hover {
+  border-color: #7d5ab5;
+}
+
+
+
+/* ريسبونسف */
+@media (max-width: 800px) {
+  .container { flex-direction: column; }
+  .courses { width: 100%; }
+  .alerts-list { grid-template-columns: 1fr; }
+  .site-header { flex-direction: column; gap: 10px; text-align: center; }
+}

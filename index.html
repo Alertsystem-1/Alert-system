@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>نظام تنبيهات ذكي - معاينة</title>
+  <link rel="stylesheet" href="/style/styles.css">
+</head>
+<body>
+  <!-- الهيدر -->
+  <header class="site-header">
+    <div class="logo">📢 نظام التنبيهات الذكي</div>
+    <nav class="nav">
+      <a href="#" id="homeLink" class="active">الرئيسية</a>
+      <a href="#" id="coursesLink">المقررات</a>
+    </nav>
+   <div class="controls">
+      <button id="newAlertBtn" class="btn primary">➕ إنشاء تنبيه جديد</button>
+      <div class="role-box">
+        <select id="roleSelect">
+          <option value="teacher">معلم</option>
+          <option value="student">طالب</option>
+        </select>
+      </div>
+    </div>
+  </header>
+  <!-- المحتوى -->
+  <main class="container">
+    <!-- قائمة المقررات -->
+    <aside id="coursesSection" class="courses">
+      <h2>المقررات</h2>
+      <ul id="courseList">
+        <li data-course="cs101" class="active">مقرر: تطوير الويب</li>
+        <li data-course="math201">مقرر: الرياضيات</li>
+        <li data-course="eng301">مقرر: اللغة الإنجليزية</li>
+      </ul>
+    </aside>
+    <!-- التنبيهات -->
+    <section class="alerts">
+      <div class="alerts-header">
+        <h2 id="alertsTitle">التنبيهات</h2>
+        <div class="summary" id="summary">0 تنبيه</div>
+      </div>
+      <ul id="alertsList" class="alerts-list"></ul>
+      <div class="empty" id="emptyState">لا توجد تنبيهات — أنشئ تنبيهًا جديدًا</div>
+      <!-- لوحة الإحصائيات -->
+      <div id="statsPanel" class="stats hidden">
+        <h3>إحصائيات الطلاب</h3>
+        <div class="stat-row">
+          <span>فتحوا:</span>
+          <div class="progress-bar"><div id="openedBar"></div></div>
+          <span id="openedPercent">0%</span>
+        </div>
+        <div class="stat-row">
+          <span>سلّموا:</span>
+          <div class="progress-bar"><div id="submittedBar"></div></div>
+          <span id="submittedPercent">0%</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- الفوتر -->
+  <footer class="site-footer">
+    <p>© 2025 نظام التنبيهات الذكي — جميع الحقوق محفوظة</p>
+  </footer>
+  <!-- مودال -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="modalTitle">إنشاء تنبيه جديد</h3>
+      <form id="alertForm">
+        <label>نوع المهمة
+          <select id="type">
+            <option value="واجب">واجب</option>
+            <option value="اختبار">اختبار</option>
+            <option value="مشروع">مشروع</option>
+            <option value="كويز">كويز</option>
+          </select>
+        </label>
+        <label>العنوان
+          <input id="title" type="text" required placeholder="عنوان التنبيه">
+        </label>
+        <label>الوصف
+          <textarea id="desc" rows="3" placeholder="وصف أو تعليمات (اختياري)"></textarea>
+        </label>
+        <label>تاريخ البداية
+          <input id="start" type="date">
+        </label>
+        <label>تاريخ التسليم
+          <input id="due" type="date" required>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn">إلغاء</button>
+          <button type="submit" id="saveBtn">حفظ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>
